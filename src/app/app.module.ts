@@ -1,7 +1,7 @@
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RecipesModule } from './recipes/recipe.module';
@@ -13,17 +13,16 @@ import { CoreModule } from './core/core.module';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     RecipesModule,
     ShoppingListModule,
     AppRoutingModule,
     SharedModule,
     AuthModule,
-    CoreModule
+    CoreModule,
   ],
   bootstrap: [AppComponent]
 })
