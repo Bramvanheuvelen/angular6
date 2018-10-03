@@ -10,20 +10,12 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
-            'A test recipe',
-            'this is a test',
+            'Een voorbeeld recept',
+            'Voorbeeld omschrijving',
             'https://images.media-allrecipes.com/images/56589.png',
             [
-                new Ingredients('Meat', 1),
-                new Ingredients('French Fries', 20)
-            ]),
-        new Recipe(
-            'Another test recipe',
-            'this is a test',
-            'https://images.media-allrecipes.com/images/56589.png',
-            [
-                new Ingredients('Buns', 2),
-                new Ingredients('Meat', 20)
+                new Ingredients('Gehakt', 200, 'gram'),
+                new Ingredients('Tomaten', 4, 'stuks')
             ])
       ];
 constructor(private slService: ShoppingListService) { }

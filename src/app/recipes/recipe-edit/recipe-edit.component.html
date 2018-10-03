@@ -3,19 +3,6 @@
     <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
       <div class="row">
         <div class="col-xs-12">
-          <button
-            type="submit"
-            class="btn btn-success"
-            [disabled]="!recipeForm.valid"
-            >Sla op</button>
-          <button
-            type="submit"
-            class="btn btn-danger"
-            (click)="onCancel()">Cancel</button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
           <div class="form-group">
             <label for="name">Naam</label>
               <input
@@ -64,27 +51,36 @@
             *ngFor="let ingredientCtrl of recipeForm.get('ingredients').controls; let i = index"
             [formGroupName]="i"
             style="margin-top: 10px;">
-            <div class="col-xs-8">
+            <div class="col-xs-6">
               <input
                 type="text"
                 class="form-control"
-                formControlName="name">
+                formControlName="name"
+                placeholder="Naam ingredient">
             </div>
             <div class="col-xs-2">
                 <input
+                  title="Hoeveelheid"
                   type="number"
                   class="form-control"
-                  formControlName="amount">
+                  formControlName="amount"
+                  placeholder="#">
             </div>
             <div class="col-xs-2">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="type"
+                placeholder="st/gr">
+          </div>
+            <div class="col-xs-2" style="float: right">
               <button
                 class="btn btn-danger"
-                (click)="onDeleteIngredient(i)">X</button>
+                (click)="onDeleteIngredient(i)">Verwijder</button>
             </div>
           </div>
-          <hr>
           <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12" style="margin-top: 15px">
               <button
                 type="button"
                 class="btn btn-success"
@@ -92,8 +88,23 @@
                 >Voeg ingredient toe</button>
             </div>
           </div>
+          <hr>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]="!recipeForm.valid"
+            >Sla op</button>
+          <button
+            type="submit"
+            class="btn btn-danger"
+            (click)="onCancel()">Annuleer</button>
+        </div>
+      </div>
+      <hr>
     </form>
   </div>
 </div>

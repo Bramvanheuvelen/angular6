@@ -6,8 +6,8 @@ export const ADD_INGREDIENT = 'ADD_INGREDIENT'
 
 const initialState = {
   ingredients: [
-    new Ingredients('Apples', 5),
-    new Ingredients('Tomatoes', 10)
+    new Ingredients('Appels', 5, 'stuks'),
+    new Ingredients('Tomaten', 10, 'stuks')
   ]
 }
 
