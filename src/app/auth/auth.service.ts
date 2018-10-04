@@ -7,7 +7,9 @@ export class AuthService {
   token: string;
   uid: string
 
-  constructor(private router: Router) {};
+  constructor(
+    private router: Router) {};
+
   signupUser(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .catch(
