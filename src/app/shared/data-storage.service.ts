@@ -40,4 +40,11 @@ export class DataStorageService {
           }
         );
     }
+
+    storeIngredients() {
+      const token = this.authService.getToken();
+      const uid = this.authService.getUid();
+
+      return this.httpClient.put(`https://recipes-98a88.firebaseio.com/${uid}/recipes.ingredients.json?auth=` + token, this.recipeService.getRecipes());
+    }
 }

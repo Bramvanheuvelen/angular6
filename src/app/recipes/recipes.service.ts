@@ -11,6 +11,7 @@ export class RecipeService {
     private recipes: Recipe[] = [
         new Recipe(
             'Een voorbeeld recept',
+            5,
             'Voorbeeld omschrijving',
             'https://images.media-allrecipes.com/images/56589.png',
             [

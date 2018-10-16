@@ -20,6 +20,11 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
+    <h3>Dit recept is voor {{ recipe.personen }} personen</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
       <h4>
           Ingrediënten:
       </h4>
@@ -38,11 +43,12 @@
     appDropdown>
       <button
         type="button"
-        class="btn btn-primary dropdown-toggle">
+        class="btn btn-primary dropdown-toggle"
+        *ngIf="authService.isAuthenticated()">
         Beheer recept <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">Voeg toe aan boodschappenlijst</a></li>
+        <!-- <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">Voeg toe aan boodschappenlijst</a></li> -->
         <li><a style="cursor: pointer;" (click)="onEditRecipe()">Pas Recept aan</a></li>
         <li><a style="cursor: pointer;" (click)="onDeleteRecipe()">Verwijder recept</a></li>
       </ul>

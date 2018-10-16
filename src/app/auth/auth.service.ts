@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AuthService {
   token: string;
-  uid: string
+  uid: string;
+  error: '';
 
   constructor(
     private router: Router) {};
@@ -30,7 +31,7 @@ export class AuthService {
         }
       )
       .catch(
-        error => console.log(error)
+        (error) => console.log(error)
       );
     }
 
